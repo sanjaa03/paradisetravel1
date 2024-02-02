@@ -1,0 +1,92 @@
+@media(max-width: 1024px){
+    .bar{
+        display: block;
+      }
+    .hamburger{
+      display: block;
+    }
+    .nav-menu{
+      position: fixed;
+      right: -100%;
+      top: 70px;
+      flex-direction: column;
+      width: 100%;
+      text-align: center;
+      
+      transition: 0.3s;
+    }
+    .nav-item{
+        padding: 1.5rem 0;
+      }
+    
+    .nav-menu.active{
+      right: 0;
+    }
+    #aboutImagesOne img{
+      width: 400px;
+      height: 300px;
+    }
+    #aboutImagesTwo img{
+      width: 400px;
+      height: 300px;
+   }
+  
+  }
+  /*about*/
+@media screen and (max-width: 960px){
+
+  /* #aboutImagesTwo img{
+      width: 400px;
+      height: 300px;
+   }*/
+
+   
+ 
+}
+  @media(max-width: 770px){
+ 
+       .slajder h5{
+        font-size: 30px;
+      }
+      .slajder p{
+        font-size: 20px;
+      }
+      #aboutBlockOne{
+        display: block;
+      }
+  }
+  @media(max-width: 610px){
+  
+    .slajder{
+      top:10%;
+    }
+    .slajder h5{
+     font-size: 18px;
+   }
+   .slajder p{
+    font-size: 13px;
+  }
+  #aboutImagesOne img{
+    width: 310px;
+    height: 270px;
+  }
+  #aboutImagesTwo img{
+    width: 310px;
+    height: 270px;
+  }
+  .polje{
+    margin: 30px 0px;
+  }
+  #about-text{
+    margin: 50px 0px;
+  }
+
+  .filtriranje ul li{
+    padding: 7px 15px;
+  }
+}
+@media(max-width: 426px){
+  #carouselExampleCaptions img{
+    height: 220px;
+  }
+  }
