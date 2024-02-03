@@ -253,3 +253,59 @@
   .drzacSlika .slika img:hover {
     transform: scale(1.1);
   }
+
+/*contact*/
+.sakrij{
+    display: none;
+  }
+  .crvena-bordura{
+    border: 1px solid #ff0000;
+  }
+  .stil{
+    margin-top: 80px;
+    display:block;
+    background-color:#9cc8ef;
+    padding: 5%;
+    border-radius: 10px;
+    width:70%;
+    margin-bottom: 50px;
+  }
+  .w100{
+  width:100%;  
+  }
+  .dugme1{
+    text-align: center;
+  }
+  .sum{
+    text-align: center;
+  }
+  /*footer*/
+  footer {
+    background-color: #9cc8ef;
+  }
+  footer p {
+    color: #1d3a53;
+  }
+  footer .fa {
+    color: #1d3a53;
+    font-size: 15px;
+  }
+  footer .fa-solid {
+    color: #1d3a53;
+  }
+  /*autor slika*/
+
+  .imgabout {
+    margin: 50px 0px;
+    display: flex;
+    justify-content: space-around;
+  }
+  .imgabout img {
+    box-shadow: 10px 10px 8px rgba(0,0,0,0.2);
+  }
+  
+  .text {
+    text-align: center;
+    flex-direction: column;
+    color: #1d3a53;
+  }

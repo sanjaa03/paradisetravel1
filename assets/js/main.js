@@ -36,7 +36,6 @@ let aboutBlockOne = document.querySelector("#aboutBlockOne");
 aboutBlockOne.innerHTML = ` <div id="aboutImagesOne" class="col-sm-12 col-lg-6 ">
                                   <img src="assets/img/${aboutInfo[0]}" alt="about img" />
                             </div>
-
                               <div class="col-sm-12 col-lg-6">
                                 <div class=" my-5">
                                   <h2 class="text-center ">${aboutInfo[1]}</h2>
@@ -179,3 +178,104 @@ for (let i = 0; i < liste.length; i++) {
     }
   });
 }
+
+//contact
+var nesto=document.getElementById('forma');
+
+nesto.innerHTML = `<div class="stil">
+<h2 class="sum">Send us a message</h2>
+    <div class="col-5 w100">
+        <form name="forma-prijava" id="forma-prijava">
+            <div class="mb-3">
+                <label for="tbImePrezime" class="form-label">Full name:</label>
+                <input type="text" id="tbImePrezime" class="form-control"/>
+                <p class="alert alert-danger mt-3 sakrij"></p>
+            </div>
+            <div class="mb-3">
+                <label for="tbEmail" class="form-label">E-mail:</label>
+                <input type="text" id="tbEmail" class="form-control"/>
+                <p class="alert alert-danger mt-3 sakrij"></p>
+            </div>
+            <div class="mb-3">
+                <label for="tbAdresa" class="form-label">Address:</label>
+                <input type="text" id="tbAdresa" class="form-control"/>
+                <p class="alert alert-danger mt-3 sakrij"></p>
+            </div>
+       
+            <div class="mb-3">
+                <label for="taNapomena" class="form-label">Note:</label>
+                <textarea id="taNapomena"  class="form-control"></textarea>
+                <p class="alert alert-danger mt-3 sakrij"></p>
+            </div>
+            <div class="dugme1">
+                <input type="button" value="Send" class="btn btn-primary" id="btnPrijava" />
+            </div>
+        </form>
+    </div>
+    <div id="ispis"></div>
+</div>`
+
+
+window.onload = function(){
+    let taster = document.querySelector("#btnPrijava");
+    taster.addEventListener("click", obradaForme);
+}
+
+function obradaForme(){
+    var brojGresaka = 0;
+    let objImePrezime,objEmail, objAdresa,objNapomena;
+
+    objImePrezime = document.querySelector("#tbImePrezime");
+    objEmail = document.querySelector("#tbEmail");
+    objAdresa = document.querySelector("#tbAdresa");
+    objNapomena = document.querySelector("#taNapomena");
+
+    let reImePrezime,reEmail, reAdresa;
+    reImePrezime = /^[A-Z][a-z]{2,14}(\s[A-Z][a-z]{2,14})+$/;
+    reEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`~-]+@[a-zA-Z0-9-]+(.com)+$/;
+    reAdresa = /^(([A-Z][a-z]{1,15}(\.)?)|([1-9][0-9]{0,2}(\.)?))[a-zA-Z0-9\s\/\-]+$/;
+
+    proveraRegularnimIzrazima(reImePrezime, objImePrezime, "First and Last name must start with uppercase!(Example:Ana Johnson)");
+    proveraRegularnimIzrazima(reEmail, objEmail, "Email must be in format: something@example.com");
+    proveraRegularnimIzrazima(reAdresa, objAdresa, "Address must be in format:");
+
+    function proveraRegularnimIzrazima(regularni, objekat, poruka){
+        if(!regularni.test(objekat.value)){
+            objekat.nextElementSibling.classList.remove("sakrij");
+            objekat.nextElementSibling.innerHTML = poruka;
+            objekat.classList.add("crvena-bordura");
+            brojGresaka++;
+        }
+        else{
+            objekat.nextElementSibling.classList.add("sakrij");
+            objekat.nextElementSibling.innerHTML = "";
+            objekat.classList.remove("crvena-bordura");
+        }
+    }
+    if(objNapomena.value.length < 10){
+        objNapomena.nextElementSibling.classList.remove("sakrij");
+        objNapomena.nextElementSibling.innerHTML = "Note must be at least 10 characters long!";
+        objNapomena.classList.add("crvena-bordura");
+        brojGresaka++;
+    }
+    else{
+        objNapomena.nextElementSibling.classList.add("sakrij");
+        objNapomena.nextElementSibling.innerHTML = "";
+        objNapomena.classList.remove("crvena-bordura");
+    }
+
+    if(brojGresaka == 0){
+        let divIspis = document.querySelector("#ispis");
+        divIspis.setAttribute("class", "alert alert-success mt-4");
+
+        let formatZaIspis = `Your message is sent!`;
+
+        divIspis.innerHTML = formatZaIspis;
+
+        document.getElementById("forma-prijava").reset();
+
+    }
+
+}
+
+
