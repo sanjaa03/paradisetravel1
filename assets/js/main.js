@@ -215,7 +215,6 @@ nesto.innerHTML = `<div class="stil">
     <div id="ispis"></div>
 </div>`
 
-
 window.onload = function(){
     let taster = document.querySelector("#btnPrijava");
     taster.addEventListener("click", obradaForme);
@@ -256,7 +255,7 @@ function obradaForme(){
         objNapomena.nextElementSibling.classList.remove("sakrij");
         objNapomena.nextElementSibling.innerHTML = "Note must be at least 10 characters long!";
         objNapomena.classList.add("crvena-bordura");
-        brojGresaka++;
+brojGresaka++;
     }
     else{
         objNapomena.nextElementSibling.classList.add("sakrij");
@@ -273,7 +272,6 @@ function obradaForme(){
         divIspis.innerHTML = formatZaIspis;
 
         document.getElementById("forma-prijava").reset();
-
     }
 
 }
