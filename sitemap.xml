@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="">
+   <url>
+     <loc>index</loc>
+     <lastmod>2024-02-02</lastmod>
+     <changefreq>daily</changefreq>
+     <priority>1</priority>
+   </url>
+   <url>
+     <loc>autor</loc>
+     <lastmod>2024-02-02</lastmod>
+     <changefreq>yearly</changefreq>
+     <priority>0.6</priority>
+   </url>
+</urlset>
